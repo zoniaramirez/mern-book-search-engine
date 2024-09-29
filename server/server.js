@@ -14,10 +14,7 @@ const PORT = process.env.PORT || 3001;
 const server = new ApolloServer({
   typeDefs,
   resolvers,
-  context: ({ req }) => {
-    authMiddleware(req);
-    return { req };
-  }
+  context: authMiddleware,
 });
 
 // Create a new instance of an Apollo server with the GraphQL schema
