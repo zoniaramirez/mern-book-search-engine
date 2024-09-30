@@ -12,7 +12,7 @@ import Navbar from './components/Navbar';
 
 // Create an HTTP link to the GraphQL server
 const httpLink = createHttpLink({
-  uri: '/graphql',
+  uri: 'http://localhost:3001/graphql',
 });
 
 // Set up the authentication link to include the token in the headers

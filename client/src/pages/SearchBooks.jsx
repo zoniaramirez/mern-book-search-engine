@@ -29,6 +29,9 @@ const SearchBooks = () => {
     return () => saveBookIds(savedBookIds);
   });
 
+   // define the save book function from the mutation
+   const [saveBook] = useMutation(SAVE_BOOK)
+
   // create method to search for books and set state on form submit
   const handleFormSubmit = async (event) => {
     event.preventDefault();
@@ -61,13 +64,14 @@ const SearchBooks = () => {
     }
   };
 
-    // define the save book function from the mutation
-    const [saveBook, { error }] = useMutation(SAVE_BOOK)
-
   // create function to handle saving a book to our database
   const handleSaveBook = async (bookId) => {
     // find the book in `searchedBooks` state by the matching id
     const bookToSave = searchedBooks.find((book) => book.bookId === bookId);
+
+    if (!bookToSave) {
+      return;
+    }
 
     // get token
     const token = Auth.loggedIn() ? Auth.getToken() : null;
@@ -78,12 +82,11 @@ const SearchBooks = () => {
 
     try {
       const { data } = await saveBook({
-        variables: { booInput: bookToSave },
+        variables: { bookInput: bookToSave },
       });
-      console.log(data);
-
-      if (error) {
-        throw new Error('something went wrong!');
+  
+      if (!data) {
+        throw new Error('Failed to save book');
       }
 
       // if book successfully saves to user's account, save book id to state
