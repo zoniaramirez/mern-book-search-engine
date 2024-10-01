@@ -15,7 +15,10 @@ const server = new ApolloServer({
   typeDefs,
   resolvers,
   context: authMiddleware,
-
+  formatError(err) {
+    console.log(err);
+    return err;
+  }
 });
 
 // Create a new instance of an Apollo server with the GraphQL schema
