@@ -63,7 +63,12 @@ const SavedBooks = () => {
                   {book.image ? <Card.Img src={book.image} alt={`The cover for ${book.title}`} variant='top' /> : null}
                   <Card.Body>
                     <Card.Title>{book.title}</Card.Title>
-                    <p className='small'>Authors: {book.authors}</p>
+                    <p className='small'>Authors: {book.authors.join(', ')}</p>
+                    {book.volumeInfo && book.volumeInfo.infoLink && (
+                      <a href={book.volumeInfo.infoLink} target="_blank" rel="noopener noreferrer">
+                        View on Google Books
+                      </a>
+                    )}
                     <Card.Text>{book.description}</Card.Text>
                     <Button className='btn-block btn-danger' onClick={() => handleDeleteBook(book.bookId)}>
                       Delete this Book!
