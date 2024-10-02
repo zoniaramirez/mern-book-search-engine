@@ -60,16 +60,18 @@ const SavedBooks = () => {
             return (
               <Col key={book.bookId} md="4">
                 <Card border='dark'>
-                  {book.image ? <Card.Img src={book.image} alt={`The cover for ${book.title}`} variant='top' /> : null}
+                {book.image ? (
+                    <a href={book.link} target="_blank" rel="noopener noreferrer">
+                      <Card.Img src={book.image} alt={`The cover for ${book.title}`} variant='top' />
+                    </a>
+                  ) : null}
                   <Card.Body>
                     <Card.Title>{book.title}</Card.Title>
-                    <p className='small'>Authors: {book.authors.join(', ')}</p>
-                    {book.volumeInfo && book.volumeInfo.infoLink && (
-                      <a href={book.volumeInfo.infoLink} target="_blank" rel="noopener noreferrer">
-                        View on Google Books
-                      </a>
-                    )}
+                    <p className='small'>Authors: {book.authors}</p>
                     <Card.Text>{book.description}</Card.Text>
+                    <a href={book.link} target="_blank" rel="noopener noreferrer">
+                      View on Google Books
+                    </a>
                     <Button className='btn-block btn-danger' onClick={() => handleDeleteBook(book.bookId)}>
                       Delete this Book!
                     </Button>
