@@ -44,5 +44,20 @@ npm start
 
 ## Screenshots
 
+![alttext](./public/assets/startpage.png)
+
+![alttext](./public/assets/signup.png)
+
+![alttext](./public/assets/login.png)
+
+![alttext](./public/assets/loggedin.png)
+
+![alttext](./public/assets/MongoDBAtlas.png)
+
 
 ## Links
+
+[Live URL](https://mern-book-search-engine-txww.onrender.com)
+
+[GitHub Repo](https://github.com/zoniaramirez/mern-book-search-engine)
+

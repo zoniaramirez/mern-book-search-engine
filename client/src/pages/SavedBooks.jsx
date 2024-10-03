@@ -60,7 +60,7 @@ const SavedBooks = () => {
             return (
               <Col key={book.bookId} md="4">
                 <Card border='dark'>
-                {book.image ? (
+                  {book.image ? (
                     <a href={book.link} target="_blank" rel="noopener noreferrer">
                       <Card.Img src={book.image} alt={`The cover for ${book.title}`} variant='top' />
                     </a>
@@ -69,9 +69,11 @@ const SavedBooks = () => {
                     <Card.Title>{book.title}</Card.Title>
                     <p className='small'>Authors: {book.authors}</p>
                     <Card.Text>{book.description}</Card.Text>
-                    <a href={book.link} target="_blank" rel="noopener noreferrer">
-                      View on Google Books
-                    </a>
+                    <p>
+                      <a href={book.link} target="_blank" rel="noopener noreferrer">
+                        View on Google Books
+                      </a>
+                    </p>
                     <Button className='btn-block btn-danger' onClick={() => handleDeleteBook(book.bookId)}>
                       Delete this Book!
                     </Button>
