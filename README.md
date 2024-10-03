@@ -52,6 +52,14 @@ npm start
 
 ![alttext](./public/assets/loggedin.png)
 
+![alttext](./public/assets/searchnotloggedin.png)
+
+![alttext](./public/assets/booksearchloggedin.png)
+
+![alttext](./public/assets/booksaved.png)
+
+![alttext](./public/assets/savedbookpage.png)
+
 ![alttext](./public/assets/MongoDBAtlas.png)
 
 
