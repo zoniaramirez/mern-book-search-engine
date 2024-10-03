@@ -18,11 +18,13 @@ The MERN Book Search Engine is a full-stack web application that allows users to
 npm install
 ```
 
-## Usage
-
 ```
 npm run build
 ```
+
+
+
+## Usage
 
 ```
 npm start
